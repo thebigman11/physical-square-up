@@ -1,0 +1,31 @@
+#include <kipr/botball.h>
+int back_full=-1500;
+int right=1;
+int left=2;
+int stop=0;
+int main()
+{
+	while(1){
+    if(digital(1)==1 & digital(2)==1){
+    	mav(right,stop);
+    	mav(left,stop);
+    	break;
+    }
+    if(digital(1)==0 & digital(2)==0){
+    	mav(right,back_full);
+    	mav(left,back_full);
+        msleep(2);
+    }
+        if(digital(1)==0 & digital(2)==1){
+        mav(right,back_full);
+        mav(left,stop);
+        msleep(1);
+        }
+        if(digital(1)==1 & digital(2)==0){
+        mav(right,stop);
+        mav(left,back_full);
+        
+        }
+    }
+    return 0;
+}
